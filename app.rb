@@ -14,11 +14,13 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    final_string = ""
-    (params[:number].to_i).times do
-      final_string += "#{params[:phrase]}\n"
+    str = ""
+    number = params[:number]
+    phrase = params[:phrase]
+    (number.to_i).times do
+      str += "#{phrase}\n"
     end
-    final_string
+    str
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
